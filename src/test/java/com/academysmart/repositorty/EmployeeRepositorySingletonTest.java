@@ -30,7 +30,7 @@ public class EmployeeRepositorySingletonTest {
 	
 	@Test(expected=IncorrectEmailException.class)
 	public void testAddEmployeWithIncorrectEmail() throws ServletException {
-        
+
         EmployeeRepositorySingleton.getRepository().addEmployee("Ваня","Иванов", "ivanov@mail.ru");
 		Assert.fail("Test is not implemented");
 

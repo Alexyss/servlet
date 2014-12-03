@@ -23,7 +23,7 @@
 	</div>
 	<div class="empTable">
 		<c:choose>
-			<c:when test="${empty applicationScope.employees}">
+			<c:when test="${empty employees}">
 				<!-- Inform user that there's no employee yet -->
                 Данных нет.
 			</c:when>
@@ -36,7 +36,7 @@
                         <td>Фамилия</td>
                         <td>email</td>
                     </tr>
-					<c:forEach var="employee" items="${applicationScope.employees}">
+					<c:forEach var="employee" items="${employees}">
 						<tr>
                             <td><c:out value="${employee.name}" /></td>
                             <td><c:out value="${employee.family}" /></td>

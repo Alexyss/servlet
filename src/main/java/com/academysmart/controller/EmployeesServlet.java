@@ -18,9 +18,9 @@ public class EmployeesServlet extends HttpServlet {
                          HttpServletResponse response) throws IOException, ServletException {
 			//TODO implement logic to process GET requests
             request.setAttribute("employees",ers.getAllEmployees());
-           // getServletContext().getRequestDispatcher("/employee.jsp").forward(request,response);
-        response.sendRedirect("/employee.jsp");
-            //request.getRequestDispatcher("/employee.jsp").forward(request,response);
+          getServletContext().getRequestDispatcher("/employee.jsp").forward(request,response);
+        //response.sendRedirect("/employee.jsp");
+//            request.getRequestDispatcher("/employee.jsp").forward(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request,

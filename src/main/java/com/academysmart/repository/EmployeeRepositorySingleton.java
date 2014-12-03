@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EmployeeRepositorySingleton {
     private static EmployeeRepositorySingleton instance;
-    private List<Employee> employees = new ArrayList<Employee>();
+    private List<Employee> employees = new ArrayList<>();
     private EmployeeRepositorySingleton (){
     }
 

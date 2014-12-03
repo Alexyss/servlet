@@ -70,7 +70,7 @@ public class Dbase {
         try {
             dbConnection = getDBConnection();
             statement = dbConnection.createStatement();
-           // rs = statement.executeQuery(query);
+            rs = statement.executeQuery(query);
             while (rs.next()){
                 Employee employee = new Employee();
                 employee.setIdPerson(rs.getInt("IDPERSON"));

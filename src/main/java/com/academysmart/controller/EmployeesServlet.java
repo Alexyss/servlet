@@ -15,11 +15,12 @@ public class EmployeesServlet extends HttpServlet {
     EmployeeRepositorySingleton ers = EmployeeRepositorySingleton.getRepository();
 
     protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws IOException, ServletException {
-		//TODO implement logic to process GET requests
-        request.setAttribute("employees",ers.getAllEmployees());
-        getServletContext().getRequestDispatcher("/employee.jsp").forward(request,response);
-  //      request.getRequestDispatcher("/employee.jsp").forward(request,response);
+                         HttpServletResponse response) throws IOException, ServletException {
+			//TODO implement logic to process GET requests
+            request.setAttribute("employees",ers.getAllEmployees());
+           // getServletContext().getRequestDispatcher("/employee.jsp").forward(request,response);
+        response.sendRedirect("/employee.jsp");
+            //request.getRequestDispatcher("/employee.jsp").forward(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request,
@@ -32,7 +33,8 @@ public class EmployeesServlet extends HttpServlet {
         } catch (com.academysmart.exception.ServletException e) {
            request.setAttribute("errMsg",e);
         }
-       this.doGet(request,response);
+        //request.setAttribute("employees",ers.getAllEmployees());
+        this.doGet(request,response);
 
     }
 }

@@ -7,10 +7,11 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.sql.SQLException;
+
 public class EmployeeRepositorySingletonTest {
     public static EmployeeRepositorySingleton ersTest1;
     public static EmployeeRepositorySingleton ersTest2;
-
 
     @BeforeClass
 	public static void beforeClass()throws Exception {
@@ -29,12 +30,10 @@ public class EmployeeRepositorySingletonTest {
 	
 	
 	@Test(expected=IncorrectEmailException.class)
-	public void testAddEmployeWithIncorrectEmail() throws ServletException {
-
+	public void testAddEmployeWithIncorrectEmail() throws ServletException, SQLException {
         EmployeeRepositorySingleton.getRepository().addEmployee("Ваня","Иванов", "ivanov@mail.ru");
 		Assert.fail("Test is not implemented");
-
-//       Assert.fail(String.valueOf(EmployeeRepositorySingleton.getRepository().addEmployee("Ваня","Иванов", "ivanov@mail.ru")));
+////       Assert.fail(String.valueOf(EmployeeRepositorySingleton.getRepository().addEmployee("Ваня","Иванов", "ivanov@mail.ru")));
 	}
 
 }

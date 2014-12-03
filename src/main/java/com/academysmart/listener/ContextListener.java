@@ -1,10 +1,10 @@
 package com.academysmart.listener;
 
+import com.academysmart.repository.EmployeeRepositorySingleton;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-
-import com.academysmart.repository.EmployeeRepositorySingleton;
 
 /**
  * Application Lifecycle Listener implementation class ContextListener
@@ -23,7 +23,11 @@ public class ContextListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce) {
-        sce.getServletContext().setAttribute("employees", EmployeeRepositorySingleton.getRepository().getAllEmployees());
+        //try {
+            sce.getServletContext().setAttribute("employees", EmployeeRepositorySingleton.getRepository().getAllEmployees());
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
 	/**
